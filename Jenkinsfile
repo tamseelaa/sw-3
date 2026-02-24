@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Checkout') {
 			steps {
-				git 'https://https://github.com/tamseelaa/sw-3.git'
+				git 'https://github.com/tamseelaa/sw-3.git'
 			}
 		}
 		stage('Build') {
