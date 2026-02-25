@@ -7,17 +7,19 @@ pipeline {
 	}
 
 	environment {
-		PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-		DOCKERHUB_CREDENTIALS_ID = 'DOCKER_HUB'
-		DOCKERHUB_REPO = 'assi4-Tamseela'
-		DOCKER_IMAGE_TAG = 'v1'
+		environment {
+			PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
+			DOCKERHUB_CREDENTIALS_ID = 'DOCKER_HUB'
+			DOCKERHUB_REPO = 'assi4-Tamseela'
+			DOCKER_IMAGE_TAG = 'v1'
 	}
 
 	stages {
 
 		stage('Checkout') {
 			steps {
-				git 'https://github.com/tamseelaa/sw-3'
+				git 'https://github.com/tamseelaa/sw-3.git',
+				branch: 'main'
 			}
 		}
 
