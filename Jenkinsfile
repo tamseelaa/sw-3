@@ -5,13 +5,17 @@ pipeline {
 	tools {
 		maven 'Maven3911'
 	}
-
+	options {
+		skipDefaultCheckout(true)
+	}
 	environment {
 		environment {
 			PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
 			DOCKERHUB_CREDENTIALS_ID = 'DOCKER_HUB'
 			DOCKERHUB_REPO = 'assi4-Tamseela'
 			DOCKER_IMAGE_TAG = 'v1'
+
+		}
 	}
 
 	stages {
