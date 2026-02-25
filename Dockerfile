@@ -8,4 +8,7 @@ COPY . /app
 
 RUN mvn package
 
-CMD ["java", "-jar", "target/cal.jar"]
+FROM eclipse-temurin:17-jre
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
+CMD ["java", "-jar", "app.jar"]
