@@ -3,11 +3,11 @@ pipeline {
 	agent any
 
 	tools {
-		maven 'Maven3'
+		maven 'Maven3911'
 	}
 
 	environment {
-		PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
+		PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin"
 		DOCKERHUB_CREDENTIALS_ID = 'DOCKER_HUB'
 		DOCKERHUB_REPO = 'assi4-Tamseela'
 		DOCKER_IMAGE_TAG = 'v1'
